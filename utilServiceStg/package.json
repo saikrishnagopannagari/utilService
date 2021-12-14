@@ -1,0 +1,25 @@
+{
+  "name": "utilServiceStg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "functions-framework --target=utilServiceStg"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "2factor": "^1.0.6",
+    "@google-cloud/functions-framework": "^1.9.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.5.0",
+    "nodemon": "^2.0.7",
+    "pdf-creator-node": "^2.2.3",
+    "save": "^2.4.0"
+  }
+}

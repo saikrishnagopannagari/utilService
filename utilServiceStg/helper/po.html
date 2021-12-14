@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* .container {
+          display: flex;
+          flex: 1;
+          justify-content: center;
+        } */
+        .box {
+            background-color: white;
+            /* width: 50%; */
+            border: 1px solid black;
+            padding: 19px;
+            margin: 55px;
+            display: flex;
+            word-wrap: break-word;
+            position: fix;
+        }
+
+        .order {
+            word-wrap: break-word;
+        }
+
+        .Address {
+            /* max-width: 100%; */
+            margin-left: 50px;
+            word-wrap: break-word;
+        }
+
+        .po {
+            padding-top: 40px;
+            word-wrap: break-word;
+        }
+
+        th {
+            background-color: yellow;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 30px;
+            margin: 55px;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        #t01 tr:nth-child(even) {
+            background-color: whitesmoke;
+        }
+
+        #t01 tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        .signatory {
+            display: flex;
+            margin-top: 70px;
+        }
+
+        .value {
+            /* width: 90%; */
+            word-wrap: break-word;
+        }
+
+        .main {
+            border: 1px solid black;
+            padding: 19px;
+            margin: 55px;
+            width: 1000px;
+        }
+
+        .main2 {
+            border: 1px solid black;
+            padding: 19px;
+            margin: 55px;
+            width: 1000px
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 style="text-align: center;">PURCHASE ORDER</h1>
+    <img src='data:image/png;base64,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'
+        alt='logo' />
+    <div class="container">
+        <div class="main">
+            <div class='box'>
+                <div class='order'>
+                    <h4>ADDRESS</h4>
+                    <p style="max-width: 20%;">CO-01, 1st Floor, Indu The Annex 13, Fortune Fields, K P H B Phase 1,
+                        Kukatpally,
+                        Hyderabad, Telangana 500085
+                    </p>
+                </div>
+                <div class='Address'>
+                    <h4>ADDRESS </h4>
+                    <p> Nagori Ply No 28 4th main, road Hyderabad</p>
+                </div>
+            </div>
+            <div class='box'>
+                <div class='order'>
+                    <table>
+                        <th>Project Contact details</th>
+                        <tr>
+                            <td>Contact</td>
+                            <td>Mobile No</td>
+                        </tr>
+                        <tr>
+                            <td>Mr Abhilash</td>
+                            <td>9002291511</td>
+                        </tr>
+                        </tr>
+                    </table>
+                </div>
+                <div class='site'>
+                    <table>
+                        <th>Site Engineer Contact details</th>
+                        <tr>
+                            <td>Contact</td>
+                            <td>Mobile No</td>
+                        </tr>
+                        <tr>
+                            <td >CM</td>
+                            <td>9012913225</td>
+                        </tr>
+                        </tr>
+                    </table>
+                </div>
+                <div class="po">
+                    <p>PO NO: {{orderId}}</p>
+                    <p>PO Date:28-Jun-21</p>
+                </div>
+            </div>
+        </div>
+        <div class="main2">
+            <table style='width:800px'>
+                <tr>
+                    <th style="background-color: orange;">Sno</th>
+                    <th style="background-color: orange;">Description of material</th>
+                    <th style="background-color: orange;">Unit </th>
+                    <th style="background-color: orange;">Quantity</th>
+                    <th style="background-color: orange;">Rate</th>
+                    <th style="background-color: orange;">Amount</th>
+                </tr>
+                {{#each orderData}}
+                <tr>
+                    <td>{{this.Sno}}</td>
+                    <td>{{this.Descriptionofmaterial}}</td>
+                    <td>{{this.Unit}}</td>
+                    <td>{{this.Quantity}}</td>
+                    <td>{{this.Rate}}</td>
+                    <td>{{this.Amount}}</td>
+                </tr>
+                {{/each}}
+                <div class="value">
+                    <table style='width:800px'>
+                        <tr>
+                            <th>Basic Value</th>
+                            <th></th>
+                            <td>37,766</td>
+                        </tr>
+                        <tr>
+                            <td>Discount</td>
+                            <td>-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Basic value after discount GST Total value including Taxes & Duties</td>
+                            <td>18%</td>
+                            <td>37,766 6,797.85 44,563.67</td>
+                        </tr>
+                        <td>Terms & Conditions:
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </td>
+                        <td></td>
+                        <tr>
+                            <th>
+                                PRICE BASIS
+                            </th>
+                            <th>
+                                FREIGHT
+                            </th>
+                            <th>
+                                INSURANCE
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>For Site</td>
+                            <td>Actual to be collected at site</td>
+                            <td>Vendor Scope</td>
+                        </tr>
+                        <tr>
+                            <th style="background-color: orange;">SHIP TO ADDRESS :</th>
+                            <th style="background-color: orange;">BILL TO ADDRESS :</th>
+                            <th style="background-color: orange;">PAYMENT TERMS</th>
+                        </tr>
+                        <tr>
+                            <td>-----</td>
+                            <td>-----</td>
+                            <td>-----</td>
+                        </tr>
+                        <tr>
+                            <td>Special Instructions:
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </td>
+                        </tr>
+                    </table>
+            </table>
+            <div class='box' style='width:700px'>
+                <div class='order'>
+                    <h4>For Nagori Ply</h4>
+                    <p style="padding-top: 50px;">Authorized Signatory
+                    </p>
+                </div>
+                <div class='Address'>
+                    <h4 style="margin-left: 250px;">For Uniworks Designs Pvt Ltd </h4>
+                    <p style="padding-top: 50px;margin-left: 250px; "> Authorized Signatory</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
